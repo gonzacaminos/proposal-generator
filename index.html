@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html ng-app="Proposal" ng-controller="ProposalController">
+	<head>
+		<title class="title">{{siteTitle}}</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="assets/css/main.css"/>
+	</head>
+	<body >
+
+		<!-- Header -->
+		<header id="header">
+			<div class="logo">
+				<a href="index.html" class="title">{{siteTitle}}</a>
+			</div>
+			<a href="#menu">
+				<span>Menu</span></a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li>
+					<a href="#goals">Goals</a>
+				</li>
+				<li>
+					<a href="#fees">Fees</a>
+				</li>
+				<li>
+					<a href="#schedule">Schedule</a>
+				</li>
+				<li>
+					<a href="#methodology">Methodology</a>
+				</li>
+
+			</ul>
+		</nav>
+
+		<!-- Banner -->
+		<!-- Note: To show a background image, set the "data-bg" attribute below to the full filename of your image. This is used in each section to set the background image. -->
+		<section id="banner" class="bg-img" data-bg="banner.jpg">
+			<div class="inner">
+				<header>
+					<h1 class="main-title">{{siteTitle}}</h1>
+					<h3 class="client-name">Proposal for
+						<span>{{clientName}}</span></h3>
+
+				</header>
+			</div>
+		</section>
+
+		<!-- One -->
+		<section id="goals" class="wrapper post bg-img" data-bg="banner2.jpg">
+			<div class="inner">
+				<article class="box">
+					<header>
+						<h2>Goals and objectives</h2>
+					</header>
+					<div class="content">
+						<p>{{goals}}</p>
+					</div>
+
+				</article>
+			</div>
+		</section>
+
+		<!-- Two -->
+		<section id="fees" class="wrapper post bg-img" data-bg="banner5.jpg">
+			<div class="inner">
+				<article class="box">
+					<header>
+						<h2>Fees summary</h2>
+					</header>
+					<div class="content">
+						<p>{{feeDesc}}</p>
+
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+
+									<tr ng-repeat="item in items">
+										<td>{{item.name}}</td>
+										<td>{{item.desc}}</td>
+										<td>USD
+											{{item.price}}</td>
+									</tr>
+
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="2"></td>
+										<td class="red">USD
+											{{getFeeTotal()}}</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+
+					</div>
+					<footer>
+						<h4>Fee Schedule</h4>
+						<p>
+							The above pricing is effective through
+							<span class="effective-date">{{effectiveDate}}</span>.
+							<span class="fee-percent">{{feePercent}}</span>
+							of total project fee is due upon contract acceptance with remainder due upon project completion. Monthly and yearly services will be billed one month in advance with net-15 terms (if applicable).
+						</p>
+					</footer>
+				</article>
+			</div>
+		</section>
+
+		<!-- Three -->
+		<section id="schedule" class="wrapper post bg-img" data-bg="banner4.jpg">
+			<div class="inner">
+				<article class="box">
+					<header>
+						<h2>Deadlines and Milestones</h2>
+					</header>
+					<div class="content">
+						<p>The development of the project will take
+						</p>
+						<h2>
+							<span class="project-duration red">{{projectDuration}}</span></h2>
+						<p>(from the date both parts accept to proceed).</p>
+						<p>
+							By the end of the first stage the product should be finished and production-ready. Following that stage is possible to agree a monthly support service to maintain and update the site.</p>
+					</div>
+					<footer></footer>
+				</article>
+			</div>
+		</section>
+
+		<!-- Four -->
+		<section id="methodology" class="wrapper post bg-img" data-bg="banner3.jpg">
+			<div class="inner">
+				<article class="box">
+					<header>
+						<h2>Work ethics and methodology</h2>
+
+					</header>
+					<div class="content text-left">
+						<p>The developer commits to achieve the noted milestones on time and with quality as a must. The project execution and milestones in it will follow a clear methodology based on the following pillars:</p>
+						<p>
+							<strong>
+								Centralized resources:</strong>
+							Client and developer will share a folder in any Cloud storage provider (Google Drive, Mega, etc) to upload common resources (graphics, logos, photos, etc).</p>
+						<p>
+							<strong>Communication channels:</strong>
+							Mail is preferred as the main channel to exchange ideas and feedback, Facebook chat is accepted but only in last-minute or ugent requests.</p>
+						<p>
+							<strong>Feeback optimization:
+							</strong>After a milestone is achieved the feedback about it should be expressed on a clear and consistent way ( a detailed mail, screenshots and audio for example ). In that way the devel- oper will achieve the results faster and with full-agreement
+							of the user.</p>
+						<p>
+							<strong>Ethic coding:
+							</strong>The developer commits to create elements that are optimal for the client needs and only those who allow scalability. Code and resources will be able to be read and reused by any other developer.</p>
+					</div>
+					<footer></footer>
+				</article>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+
+				<ul class="icons">
+					<li>
+						<a href="https://aemail.com/yOn" class="icon round fa-envelope">
+							<span class="label">Mail</span></a>
+					</li>
+
+				</ul>
+
+				<div class="copyright">
+					&copy; Gonza.io.
+				</div>
+
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/angular.min.js"></script>
+		<script src="assets/js/app.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
